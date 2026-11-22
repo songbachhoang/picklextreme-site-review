@@ -291,15 +291,30 @@ Tawk_API.onChatStarted = function () { gtag('event', 'chat_start'); };</pre>
       <tr><td><strong>Play</strong></td><td>7 courts with three rate bands. Social play and drop-ins by level (3.0–3.5, 3.5–4.25). Ladies' night, Seniors &amp; Masters, kids drop-in &amp; round robin, special events. Drop-in and court packages.</td></tr>
       <tr><td><strong>Learn</strong></td><td>Learn to Play, Intro to Pickleball, Level Up clinics (Road to 3.0, 2.5–3.0, 3.0–3.5, 3.5–4.0), Three and a Coach, Drill 45. Private coaching with 6 coaches. Kids: intro clinics, winter camps (Dec 21–24 and 28–31, $149), summer camp (Jul–Aug, $199/week, ages 9+).</td></tr>
       <tr><td><strong>Compete</strong></td><td>PickleXtreme Showdown (Dec 5–6), Masters Showdown, Kids Doubles. Afternoon leagues, men's and women's ladder leagues, co-ed league. DUPR challenge nights (3.25–3.75). King &amp; Queen of the Court.</td></tr>
-      <tr><td><strong>Join</strong></td><td>Free Drop-in membership, then four paid tiers: <strong>Launch</strong> (off-peak weekdays 8–4, 2 h/day, book 7 days ahead), <strong>Surge</strong> (adds weekends, 10 days, 5 active reservations), <strong>Edge</strong> (any time, 2 h/day, 14 days, gear and league discounts), <strong>Summit</strong> (annual, 4 h/day, free tournaments, 21 days, 30% pro shop). Plus a seasonal Summer plan. Individual, student and two family types.</td></tr>
+      <tr><td><strong>Join</strong></td><td>Free Drop-in membership, then four paid tiers (live prices in CourtReserve, before 13% HST):
+        <div class="tbl" style="margin-top:8px"><table>
+          <thead><tr><th>Tier</th><th>When</th><th>Fee-free play</th><th>Book ahead</th><th>Extras</th><th>Month / quarter / year</th></tr></thead>
+          <tbody>
+            <tr><td>Launch</td><td>Weekdays 8–4</td><td>2 h/day</td><td>7 days</td><td>—</td><td class="n">$129 / $387 / $1,428</td></tr>
+            <tr><td>Surge</td><td>Weekdays 8–4 + weekends</td><td>2 h/day</td><td>10 days</td><td>5 active reservations, no initiation fee</td><td class="n">$139 / $417 / $1,548</td></tr>
+            <tr><td>Edge <span class="pill good">club's most popular</span></td><td>Any time</td><td>2 h/day</td><td>14 days</td><td>Discounted leagues, tournaments, gear</td><td class="n">$159 / $447 / $1,788</td></tr>
+            <tr><td>Summit</td><td>Any time</td><td>4 h/day</td><td>21 days</td><td>Free leagues &amp; tournaments, 30% off clinics &amp; pro shop</td><td class="n">$199 / $567 / $2,148</td></tr>
+          </tbody>
+        </table></div>
+        Terms: 30 days' written notice to cancel a membership. Court bookings: full refund 72+ hours ahead, account credit at 24–72 hours, nothing inside 24 hours.</td></tr>
       <tr><td><strong>Also</strong></td><td>Mobile app, Mississauga location (coming soon), careers &amp; affiliates, blog, FAQ, gallery, Google reviews.</td></tr>
     </tbody>
   </table></div>
   <h3>Inconsistencies to fix on the live site</h3>
+  <p>Found by reading all 96 pages in the site's sitemaps and the CourtReserve admin.</p>
   <ul class="plain">
-    <li><strong>Court rates disagree.</strong> /book-a-court/ says off-peak $44 and peak $56. /membership/ says off-peak $32 for everyone, and peak $44 for members, $56 for non-members.</li>
-    <li><strong>Opening hours disagree.</strong> The homepage says Mon–Fri 8 AM–12 AM, Sat–Sun 8 AM–10 PM. The footer on other pages says Mon–Sat 8 AM–12 AM, Sun 8 AM–10 PM.</li>
-    <li><strong>No membership prices are public.</strong> Every tier's button opens the CourtReserve login. Nearby clubs show theirs (Blue Zone lists $90/month core and a $59 trial).</li>
+    <li><strong>Membership prices are hidden and out of date.</strong> No main page shows them, and every tier button opens the CourtReserve login. The only prices on the site are in old blog posts: "Launch starting at $109" and "Summit $1,990/year". CourtReserve charges $129 and $2,148.</li>
+    <li><strong>The site sells memberships that don't exist.</strong> The membership form offers Family (1 adult + 2 kids, 2 adults + 2 kids) and Student memberships. None are set up in CourtReserve. The seasonal "Summer, limited time" plan is still advertised in November.</li>
+    <li><strong>Court rates disagree.</strong> /book-a-court/ and the homepage say off-peak $44, peak $56. /membership/ says off-peak $32 for everyone, and peak $44 for members, $56 for non-members.</li>
+    <li><strong>Three different opening hours.</strong> The footer on 94 pages says Mon–Sat 8 AM–12 AM, Sun 8 AM–10 PM. The homepage contact bar says Mon–Fri 8 AM–12 AM, Sat–Sun 8 AM–10 PM. Homepage body text says Saturday 8 AM–10 PM and Sunday 8 AM–8 PM.</li>
+    <li><strong>Template text left on 71 pages.</strong> Every blog post ends with a "Members Benefits" block promising "full access to gym, pool, group classes" and "spa services, and personal training". The club has none of these.</li>
+    <li><strong>Summit perks are described two ways.</strong> The membership page says "free tournament access" and "30% pro shop". The tier guide says free leagues <em>and</em> tournaments, and 30% off clinics too. Another blog post says "unlimited court time", while the guide says 4 hours a day.</li>
+    <li><strong>Event pages are empty.</strong> /events/afternoon-leagues/ and /events/seniors-masters-pickleball/ have a title and a Book button, nothing else: no day, time, level or price.</li>
   </ul>
 </section>
 
@@ -361,7 +376,7 @@ Tawk_API.onChatStarted = function () { gtag('event', 'chat_start'); };</pre>
   <ul class="plain">
     <li><a href="mockups/home-phone.html">Calm homepage, phone</a> · <a href="mockups/home-desktop.html">desktop</a></li>
     <li><a href="mockups/drop-ins-phone.html">Drop-ins &amp; clinics page, phone</a> · <a href="mockups/drop-ins-desktop.html">desktop</a></li>
-    <li><a href="mockups/memberships.html">Memberships, compare page</a> (prices to come from the club)</li>
+    <li><a href="mockups/memberships.html">Memberships, compare page</a> with the live CourtReserve prices</li>
   </ul>
 </section>
 

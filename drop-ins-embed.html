@@ -1,0 +1,53 @@
+<!-- PickleXtreme /drop-ins/ page: paste into ONE Elementor "HTML" widget.
+     Four CourtReserve list widgets (106947-106950), one iframe, tab buttons switch it.
+     Link to a tab with /drop-ins/#drop-ins, #clinics, #kids or #seniors.
+     WP Rocket: keep this inline script out of "Delay JavaScript execution", or the iframe never sizes itself. -->
+<div class="px-dropins">
+  <div class="px-tabs" role="tablist" aria-label="Programs">
+    <button type="button" role="tab" data-tab="drop-ins" data-id="106947" aria-selected="true">Drop-ins &amp; social play</button>
+    <button type="button" role="tab" data-tab="clinics" data-id="106948" aria-selected="false">Clinics &amp; lessons</button>
+    <button type="button" role="tab" data-tab="kids" data-id="106949" aria-selected="false">Kids camps</button>
+    <button type="button" role="tab" data-tab="seniors" data-id="106950" aria-selected="false">Seniors &amp; Masters</button>
+  </div>
+  <iframe id="px-cr" class="form-iframe-106947" title="PickleXtreme sessions, live from CourtReserve"
+    src="https://widgets.courtreserve.com/Online/Public/EmbedCode/14229/106947"
+    style="margin:0;width:100%;min-height:640px;border:none;overflow:hidden;display:block" scrolling="no"></iframe>
+</div>
+<style>
+  .px-dropins { max-width: 960px; margin: 0 auto; }
+  .px-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 12px; scrollbar-width: none; }
+  .px-tabs button {
+    flex: 0 0 auto; min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer;
+    font: 600 15px/1 Inter, system-ui, sans-serif; color: #0E0B12; background: #fff; border: 1.5px solid #E6E2EC;
+  }
+  .px-tabs button[aria-selected="true"] { background: #0E0B12; border-color: #0E0B12; color: #fff; }
+  .px-tabs button:focus-visible { outline: 3px solid #B3E307; outline-offset: 2px; }
+</style>
+<script>
+(function () {
+  var frame = document.getElementById('px-cr');
+  var tabs = [].slice.call(document.querySelectorAll('.px-tabs [role=tab]'));
+  var base = 'https://widgets.courtreserve.com/Online/Public/EmbedCode/14229/';
+
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://widgets.courtreserve.com' || !e.data || e.data.action !== 'setHeight') return;
+    frame.style.height = e.data.height + 'px';
+  });
+
+  function show(tab, updateHash) {
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+    var id = tab.getAttribute('data-id');
+    if (frame.className !== 'form-iframe-' + id) {
+      frame.className = 'form-iframe-' + id;
+      frame.style.height = '';
+      frame.src = base + id;
+    }
+    if (updateHash && history.replaceState) history.replaceState(null, '', '#' + tab.getAttribute('data-tab'));
+  }
+
+  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t, true); }); });
+
+  var fromHash = tabs.filter(function (t) { return '#' + t.getAttribute('data-tab') === location.hash; })[0];
+  if (fromHash) show(fromHash, false);
+})();
+</script>

@@ -1,5 +1,6 @@
 /* PickleXtreme brand CSS for CourtReserve "Social Plays & Clinics List" widgets.
-   Paste into: CourtReserve admin > Settings > Social Plays & Clinics List > (widget) > Custom CSS.
+   Readable source. Do NOT paste this file: CourtReserve HTML-escapes line breaks, quotes and &
+   in the Custom CSS box, which breaks every rule. Paste courtreserve-widget.paste.css (one line) instead.
    Previewed on widget 58586 on 2026-11-21. */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600&display=swap');
 
@@ -28,8 +29,9 @@ body { background: #F6F5F8 !important; font-family: Inter, system-ui, sans-serif
 .fj_post .icon-title-row { font-size: 14px; color: #6B6475; }
 .fj_post .icon-title-row a { color: #3E3748 !important; }
 
-/* Every session is marked FEATURED, so the badge carries no information */
-.fj_post .badge { display: none !important; }
+/* Every session is marked FEATURED, so the badge carries no information.
+   The badge also has class btn-org, so it must out-rank the button rule below. */
+.fj_post .badge, html:not(.mobile-html) .fj_post .badge.btn-org, html .fj_post .badge.btn-org { display: none !important; }
 
 /* Buttons: the org theme sets purple with html:not(.mobile-html) .btn-org, so match that specificity */
 .fj_post ul.pjlv5 { margin: 0 !important; padding: 0 !important; position: static !important; }
